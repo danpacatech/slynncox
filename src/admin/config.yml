@@ -1,0 +1,73 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "src/_data/home.json"
+        fields:
+          - { label: "Hero Headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero Subheadline", name: "hero_subheadline", widget: "string" }
+          - { label: "Hero Image", name: "hero_image", widget: "image" }
+          - { label: "Intro Text", name: "intro_text", widget: "markdown" }
+          - { label: "Patreon URL", name: "patreon_url", widget: "string" }
+
+      - name: "about"
+        label: "About Page"
+        file: "src/_data/about.json"
+        fields:
+          - { label: "Author Photo", name: "author_photo", widget: "image" }
+          - { label: "Bio", name: "bio", widget: "markdown" }
+          - { label: "Extended Bio", name: "extended_bio", widget: "markdown", required: false }
+
+      - name: "books"
+        label: "Books Page"
+        file: "src/_data/books.json"
+        fields:
+          - label: "Books"
+            name: "books"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Cover Image", name: "cover", widget: "image" }
+              - { label: "Status", name: "status", widget: "select", options: ["Coming Soon", "Available", "Out of Print"] }
+              - { label: "Description", name: "description", widget: "markdown" }
+              - { label: "Genre Tags", name: "genres", widget: "list", field: { label: "Genre", name: "genre", widget: "string" } }
+              - { label: "Buy Link", name: "buy_link", widget: "string", required: false }
+
+      - name: "store"
+        label: "Store Page"
+        file: "src/_data/store.json"
+        fields:
+          - { label: "Store Headline", name: "headline", widget: "string" }
+          - { label: "Store Body Text", name: "body", widget: "markdown" }
+          - { label: "Square Store URL", name: "square_url", widget: "string", required: false }
+          - { label: "Show Coming Soon Banner", name: "coming_soon", widget: "boolean", default: true }
+
+      - name: "contact"
+        label: "Contact Page"
+        file: "src/_data/contact.json"
+        fields:
+          - { label: "Intro Text", name: "intro", widget: "string" }
+
+  - name: "site"
+    label: "Site Settings"
+    files:
+      - name: "settings"
+        label: "Global Settings"
+        file: "src/_data/settings.json"
+        fields:
+          - { label: "Site Title", name: "site_title", widget: "string" }
+          - { label: "Site Description", name: "site_description", widget: "string" }
+          - { label: "Author Name", name: "author_name", widget: "string" }
+          - { label: "Facebook URL", name: "facebook_url", widget: "string", required: false }
+          - { label: "Instagram URL", name: "instagram_url", widget: "string", required: false }
+          - { label: "TikTok URL", name: "tiktok_url", widget: "string", required: false }
+          - { label: "Patreon URL", name: "patreon_url", widget: "string", required: false }

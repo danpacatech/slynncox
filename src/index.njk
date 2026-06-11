@@ -1,0 +1,51 @@
+---
+layout: layouts/base.njk
+title: Home
+---
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="section-eyebrow">Author</span>
+    <h1 class="hero-name">S. Lynn<br>Cox</h1>
+    <p class="hero-tagline">{{ home.hero_subheadline }}</p>
+  </div>
+</section>
+
+<section class="home-intro">
+  <div class="home-intro-inner">
+    <div>
+      <span class="section-rule"></span>
+      <p class="home-intro-text">{{ home.intro_text }}</p>
+    </div>
+    <div class="home-cta-block">
+      <a href="/books/" class="btn btn-primary">The Burning of the Realm</a>
+      <a href="{{ settings.patreon_url }}" target="_blank" rel="noopener" class="btn">Join on Patreon</a>
+      <a href="/about/" class="btn">About S. Lynn Cox</a>
+    </div>
+  </div>
+</section>
+
+<section class="home-book-preview">
+  <div class="home-book-inner">
+    {% for book in books.books %}
+    <div class="book-cover-wrap">
+      <img src="{{ book.cover }}" alt="Cover for {{ book.title }}" loading="lazy">
+      <span class="book-status-badge">{{ book.status }}</span>
+    </div>
+    <div class="book-info">
+      <span class="section-eyebrow">Debut Novel</span>
+      <span class="section-rule"></span>
+      <h2 class="book-info-title">{{ book.title }}</h2>
+      <div class="book-genres">
+        {% for genre in book.genres %}
+        <span class="book-genre-tag">{{ genre }}</span>
+        {% endfor %}
+      </div>
+      <p class="book-description">{{ book.description }}</p>
+      <a href="/books/" class="btn">Learn More</a>
+    </div>
+    {% endfor %}
+  </div>
+</section>

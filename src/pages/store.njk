@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+title: Store
+permalink: /store/
+---
+
+<div class="page-wrap">
+  <span class="section-eyebrow">Shop</span>
+  <span class="section-rule"></span>
+  <h1 class="page-title">{{ store.headline }}</h1>
+
+  {% if store.coming_soon %}
+  <div class="store-coming-soon">
+    <h2>Something is coming.</h2>
+    <p>The shop is being set up. Check back soon for signed copies, prints, and more.</p>
+    {% if settings.patreon_url %}
+    <br>
+    <a href="{{ settings.patreon_url }}" target="_blank" rel="noopener" class="btn btn-primary">Support on Patreon in the meantime</a>
+    {% endif %}
+  </div>
+  {% else %}
+  <div class="prose">
+    {{ store.body | markdownify | safe }}
+  </div>
+  {% if store.square_url %}
+  <div style="margin-top:2rem;">
+    <a href="{{ store.square_url }}" target="_blank" rel="noopener" class="btn btn-primary">Visit the Shop</a>
+  </div>
+  {% endif %}
+  {% endif %}
+</div>
