@@ -612,3 +612,45 @@ p:last-child { margin-bottom: 0; }
   .hero-bg { transition: none; transform: scale(1); }
   * { transition-duration: 0.01ms !important; }
 }
+
+/* ---- About page hero ---- */
+.about-hero {
+  position: relative;
+  height: 42vh;
+  min-height: 300px;
+  max-height: 480px;
+  margin-top: var(--header-height);
+  overflow: hidden;
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 30%;
+  filter: brightness(0.55);
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 10, 10, 0.15) 0%,
+    rgba(13, 10, 10, 0.55) 70%,
+    rgba(13, 10, 10, 1) 100%
+  );
+}
+
+/* When the hero is present, the page-wrap below it should not add the
+   header offset again (the hero already cleared the fixed header). */
+.about-hero + .page-wrap {
+  padding-top: 3rem;
+}
+
+@media (max-width: 640px) {
+  .about-hero {
+    height: 32vh;
+    min-height: 220px;
+  }
+}
