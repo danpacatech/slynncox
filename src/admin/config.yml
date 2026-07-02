@@ -23,6 +23,7 @@ collections:
         label: "About Page"
         file: "src/_data/about.json"
         fields:
+          - { label: "Hero Image", name: "hero_image", widget: "image" }
           - { label: "Author Photo", name: "author_photo", widget: "image" }
           - { label: "Bio", name: "bio", widget: "markdown" }
           - { label: "Extended Bio", name: "extended_bio", widget: "markdown", required: false }
