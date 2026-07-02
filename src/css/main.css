@@ -616,19 +616,21 @@ p:last-child { margin-bottom: 0; }
 /* ---- About page hero ---- */
 .about-hero {
   position: relative;
-  height: 42vh;
-  min-height: 300px;
-  max-height: 480px;
   margin-top: var(--header-height);
+  background: var(--bg);
   overflow: hidden;
 }
 
 .about-hero-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center 30%;
-  filter: brightness(0.55);
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 340px;
+  max-height: 620px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.7);
 }
 
 .about-hero-overlay {
@@ -636,21 +638,19 @@ p:last-child { margin-bottom: 0; }
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(13, 10, 10, 0.15) 0%,
-    rgba(13, 10, 10, 0.55) 70%,
+    rgba(13, 10, 10, 0) 55%,
+    rgba(13, 10, 10, 0.85) 90%,
     rgba(13, 10, 10, 1) 100%
   );
 }
 
-/* When the hero is present, the page-wrap below it should not add the
-   header offset again (the hero already cleared the fixed header). */
 .about-hero + .page-wrap {
   padding-top: 3rem;
 }
 
 @media (max-width: 640px) {
-  .about-hero {
-    height: 32vh;
-    min-height: 220px;
+  .about-hero-bg {
+    height: 44vh;
+    min-height: 260px;
   }
 }
