@@ -613,31 +613,23 @@ p:last-child { margin-bottom: 0; }
   * { transition-duration: 0.01ms !important; }
 }
 
-/* ---- About page hero ---- */
+/* ---- About page hero (full image, uncropped) ---- */
 .about-hero {
   position: relative;
-  height: 42vh;
-  min-height: 300px;
-  max-height: 480px;
   margin-top: var(--header-height);
+  background: var(--bg);
   overflow: hidden;
 }
 
 .about-hero-bg {
-  position: absolute;
-  inset: 0;
+  position: relative;
   width: 100%;
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  background-size: cover;
-  background-position: center 30%;
-  filter: brightness(0.55);
-  cursor: zoom-in;
-  transition: filter 0.3s ease;
-}
-
-.about-hero-bg:hover {
+  height: 60vh;
+  min-height: 340px;
+  max-height: 620px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   filter: brightness(0.7);
 }
 
@@ -646,68 +638,20 @@ p:last-child { margin-bottom: 0; }
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(13, 10, 10, 0.15) 0%,
-    rgba(13, 10, 10, 0.55) 70%,
+    rgba(13, 10, 10, 0) 55%,
+    rgba(13, 10, 10, 0.85) 90%,
     rgba(13, 10, 10, 1) 100%
   );
   pointer-events: none;
 }
 
-/* When the hero is present, the page-wrap below it should not add the
-   header offset again (the hero already cleared the fixed header). */
 .about-hero + .page-wrap {
   padding-top: 3rem;
 }
 
 @media (max-width: 640px) {
-  .about-hero {
-    height: 32vh;
-    min-height: 220px;
+  .about-hero-bg {
+    height: 44vh;
+    min-height: 260px;
   }
-}
-
-/* ---- Lightbox ---- */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem;
-  background: rgba(5, 3, 3, 0.94);
-  backdrop-filter: blur(4px);
-  cursor: zoom-out;
-}
-
-.lightbox[hidden] { display: none; }
-
-.lightbox-img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-  border: 1px solid var(--rule);
-  cursor: default;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.75rem;
-  background: none;
-  border: none;
-  color: var(--text);
-  font-size: 2.75rem;
-  line-height: 1;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.lightbox-close:hover { color: var(--crimson-bright); }
-
-@media (max-width: 640px) {
-  .lightbox { padding: 1.25rem; }
-  .lightbox-close { top: 0.5rem; right: 1rem; }
 }

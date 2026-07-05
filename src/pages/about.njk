@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 <section class="about-hero">
-  <button class="about-hero-bg" style="background-image: url('{{ about.hero_image }}');" aria-label="View full image" data-lightbox-src="{{ about.hero_image }}"></button>
+  <div class="about-hero-bg" style="background-image: url('{{ about.hero_image }}');"></div>
   <div class="about-hero-overlay"></div>
 </section>
 
@@ -42,38 +42,3 @@ permalink: /about/
     </div>
   </div>
 </div>
-
-<div class="lightbox" id="heroLightbox" hidden>
-  <button class="lightbox-close" aria-label="Close">&times;</button>
-  <img class="lightbox-img" src="" alt="S. Lynn Cox">
-</div>
-
-<script>
-  (function () {
-    var trigger = document.querySelector('.about-hero-bg[data-lightbox-src]');
-    var box = document.getElementById('heroLightbox');
-    if (!trigger || !box) return;
-    var img = box.querySelector('.lightbox-img');
-    var closeBtn = box.querySelector('.lightbox-close');
-
-    function open() {
-      img.src = trigger.getAttribute('data-lightbox-src');
-      box.hidden = false;
-      document.body.style.overflow = 'hidden';
-    }
-    function close() {
-      box.hidden = true;
-      img.src = '';
-      document.body.style.overflow = '';
-    }
-
-    trigger.addEventListener('click', open);
-    closeBtn.addEventListener('click', close);
-    box.addEventListener('click', function (e) {
-      if (e.target === box) close();
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !box.hidden) close();
-    });
-  })();
-</script>
