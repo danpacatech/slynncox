@@ -29,13 +29,14 @@ title: Home
 
 <section class="home-book-preview">
   <div class="home-book-inner">
-    {% for book in books.books %}
+    {% for book in books.books | sort(attribute="order") %}
+    {% if book.show_on_home != false %}
     <div class="book-cover-wrap">
       <img src="{{ book.cover }}" alt="Cover for {{ book.title }}" loading="lazy">
       {% if book.show_status != false %}<span class="book-status-badge">{{ book.status }}</span>{% endif %}
     </div>
     <div class="book-info">
-      <span class="section-eyebrow">Debut Novel</span>
+      {% if book.label %}<span class="section-eyebrow">{{ book.label }}</span>{% endif %}
       <span class="section-rule"></span>
       <h2 class="book-info-title">{{ book.title }}</h2>
       <div class="book-genres">
@@ -46,6 +47,7 @@ title: Home
       <p class="book-description">{{ book.description }}</p>
       <a href="/books/" class="btn">Learn More</a>
     </div>
+    {% endif %}
     {% endfor %}
   </div>
 </section>

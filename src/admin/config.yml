@@ -37,9 +37,12 @@ collections:
             widget: "list"
             fields:
               - { label: "Title", name: "title", widget: "string" }
+              - { label: "Display Order", name: "order", widget: "number", default: 1, value_type: "int", min: 1, hint: "Lower numbers show first. 1 = top." }
+              - { label: "Label", name: "label", widget: "string", required: false, hint: "Small text above the title, e.g. 'Debut Novel' or 'Book Two'. Leave blank for none." }
               - { label: "Cover Image", name: "cover", widget: "image" }
               - { label: "Status", name: "status", widget: "select", options: ["Coming Soon", "Available", "Out of Print"] }
               - { label: "Show Status Badge", name: "show_status", widget: "boolean", default: true, hint: "Turn off to hide the Coming Soon / Available badge on the cover." }
+              - { label: "Show on Home Page", name: "show_on_home", widget: "boolean", default: true, hint: "Turn off to hide this book from the home page (still shows on the Books page)." }
               - { label: "Description", name: "description", widget: "markdown" }
               - { label: "Genre Tags", name: "genres", widget: "list", field: { label: "Genre", name: "genre", widget: "string" } }
               - { label: "Buy Link", name: "buy_link", widget: "string", required: false }
