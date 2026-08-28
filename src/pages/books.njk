@@ -14,7 +14,7 @@ permalink: /books/
     <div class="book-entry">
       <div class="book-cover-wrap">
         <img src="{{ book.cover }}" alt="Cover for {{ book.title }}" loading="lazy">
-        <span class="book-status-badge">{{ book.status }}</span>
+        {% if book.show_status != false %}<span class="book-status-badge">{{ book.status }}</span>{% endif %}
       </div>
       <div class="book-info">
         <h2 class="book-info-title">{{ book.title }}</h2>

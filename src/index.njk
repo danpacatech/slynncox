@@ -32,7 +32,7 @@ title: Home
     {% for book in books.books %}
     <div class="book-cover-wrap">
       <img src="{{ book.cover }}" alt="Cover for {{ book.title }}" loading="lazy">
-      <span class="book-status-badge">{{ book.status }}</span>
+      {% if book.show_status != false %}<span class="book-status-badge">{{ book.status }}</span>{% endif %}
     </div>
     <div class="book-info">
       <span class="section-eyebrow">Debut Novel</span>

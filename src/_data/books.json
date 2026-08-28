@@ -10,7 +10,8 @@
         "Emotionally Grounded",
         "Portal Fantasy"
       ],
-      "buy_link": ""
+      "buy_link": "",
+      "show_status": true
     }
   ]
 }

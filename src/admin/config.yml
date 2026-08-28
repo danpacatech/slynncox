@@ -39,6 +39,7 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Cover Image", name: "cover", widget: "image" }
               - { label: "Status", name: "status", widget: "select", options: ["Coming Soon", "Available", "Out of Print"] }
+              - { label: "Show Status Badge", name: "show_status", widget: "boolean", default: true, hint: "Turn off to hide the Coming Soon / Available badge on the cover." }
               - { label: "Description", name: "description", widget: "markdown" }
               - { label: "Genre Tags", name: "genres", widget: "list", field: { label: "Genre", name: "genre", widget: "string" } }
               - { label: "Buy Link", name: "buy_link", widget: "string", required: false }
