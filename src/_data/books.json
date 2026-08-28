@@ -12,6 +12,16 @@
       ],
       "buy_link": "",
       "show_status": false
+    },
+    {
+      "show_status": true,
+      "cover": "/images/book-cover-tease.jpg",
+      "status": "Coming Soon",
+      "title": "The Burned Legacy",
+      "description": "Book Two of the Realmfire Series Coming Early 2027",
+      "genres": [
+        "fantasy"
+      ]
     }
   ]
 }
