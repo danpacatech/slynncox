@@ -9,7 +9,7 @@
       ],
       "status": "Available",
       "buy_link": "https://author-s-lynn-cox.square.site/product/the-burning-of-the-realm/ISAPV2KHZJKQ5VJEXAYOB6IP?cp=true&sa=true&sbp=false&q=false",
-      "label": "Debut Novel",
+      "label": "Book One of the Realmfire Series",
       "show_status": false,
       "cover": "/images/1000037594.jpg",
       "title": "The Burning of the Realm",
@@ -19,7 +19,9 @@
     {
       "order": 2,
       "genres": [
-        "fantasy"
+        "Fantasy",
+        "Character-driven Fantasy",
+        "Epic Fantasy"
       ],
       "status": "Coming Soon",
       "label": "Book Two of the Realmfire Series Coming Early 2027",
